@@ -1,20 +1,40 @@
 # Studi Ablasi RNN, LSTM, GRU vs ANN untuk Prediksi Trafik Seluler Milan
 
-Tugas Workshop Deep Learning — Teknik Telekomunikasi ITERA.
+Tugas Workshop Deep Learning — Teknik Telekomunikasi, Institut Teknologi Sumatera (ITERA).
 
-<!-- Ganti seluruh isian bertanda [ ... ] di bawah. Hapus komentar ini. -->
+## Identitas
 
-## Kelompok
-
-| Peran | Nama | NIM |
+| Nama | NIM | Kelas |
 |---|---|---|
-| Ketua | [Nama Lengkap] | [NIM] |
-| Anggota | [Nama Lengkap] | [NIM] |
-| Anggota | [Nama Lengkap] | [NIM] |
+| Helsa Anastasya | 124400009 | RA |
 
-- **Kelas:** [RA / RB]
-- **Lokasi kelompok:** [kode] — [nama lokasi] (digit terakhir NIM terkecil)
-- **Laporan:** [`laporan-latex/main.pdf` atau `laporan-typst/main.pdf`]
+**Pengerjaan:** Individu  
+**Lokasi kelompok:** Kode 9 — Corso Como  
+**Lokasi acuan:** Duomo (grid 5060)
+
+## Deskripsi Proyek
+
+Proyek ini membandingkan model ANN, RNN, LSTM, dan GRU untuk memprediksi aktivitas internet seluler per jam menggunakan dataset Telecom Italia di Kota Milan.
+
+Eksperimen mencakup studi ablasi terhadap tujuh faktor, yaitu panjang jendela, ukuran hidden, jumlah lapisan, learning rate, kelompok fitur, batch size, dan early stopping patience.
+
+Sebanyak 348 percobaan tercatat, termasuk konfigurasi acuan, konfigurasi terbaik, dan pengujian generalisasi lokasi.
+
+## Hasil Utama
+
+- Pada konfigurasi acuan di Duomo, RNN memperoleh Test MAE terendah sebesar 229,6.
+- Konfigurasi gabungan meningkatkan Validation MAE ANN dari 248,9 menjadi 212,4.
+- Pada Corso Como, GRU dengan konfigurasi gabungan menghasilkan Test MAE terendah sebesar 111,3.
+- Hasil menunjukkan bahwa penggabungan hyperparameter terbaik secara individual tidak selalu meningkatkan akurasi.
+
+## File Proyek
+
+- `tugas_ablasi.ipynb` — Notebook eksperimen dan output.
+- `data/` — Dataset yang digunakan.
+- `hasil/` — Hasil eksperimen dalam CSV dan grafik.
+- `laporan-latex/` — Source LaTeX laporan IEEE.
+- `Laporan_Ablasi_Helsa_Anastasya.pdf` — Laporan akhir.
+- `pyproject.toml` dan `uv.lock` — Dependensi proyek.
 
 ## Cara Menjalankan
 
@@ -23,23 +43,8 @@ uv sync
 uv run jupyter lab
 ```
 
-Buka `tugas_ablasi.ipynb`, isi `LOKASI_KELOMPOK`, lalu jalankan semua sel. Semua run tercatat di `hasil/ablasi.csv`.
+Buka file `tugas_ablasi.ipynb`, lalu jalankan sel sesuai urutan.
 
-Perangkat yang kami pakai: [contoh: laptop CPU Intel i5 / Google Colab T4], total waktu training: [x] menit.
+## Penggunaan AI
 
-## Ringkasan Hasil
-
-[2–4 kalimat temuan utama, beserta angka test MAE terbaik per model.]
-
-## Struktur
-
-```
-tugas_ablasi.ipynb      notebook eksperimen (di-commit beserta output)
-data/                   data trafik per jam (Duomo + 10 lokasi tugas)
-hasil/                  CSV seluruh run, tabel, dan grafik
-laporan-latex/ atau laporan-typst/   sumber laporan + PDF
-```
-
-## Data
-
-Telecom Italia Big Data Challenge (Barlacchi dkk., 2015, *Scientific Data*, lisensi ODbL), versi per jam dari Zhang dkk. (INFOCOM 2021). Disiapkan oleh pengajar di repo [mctosima/dl-workshop](https://github.com/mctosima/dl-workshop).
+ChatGPT digunakan sebagai alat bantu memahami instruksi, menangani kesalahan teknis, mendampingi pelaksanaan eksperimen, serta membantu penyusunan laporan. Hasil evaluasi diperoleh dari eksekusi eksperimen menggunakan JupyterLab.
