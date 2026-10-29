@@ -47,4 +47,4 @@ Buka file `tugas_ablasi.ipynb`, lalu jalankan sel sesuai urutan.
 
 ## Penggunaan AI
 
-ChatGPT digunakan sebagai alat bantu memahami instruksi, menangani kesalahan teknis, mendampingi pelaksanaan eksperimen, serta membantu penyusunan laporan. Hasil evaluasi diperoleh dari eksekusi eksperimen menggunakan JupyterLab.
+ChatGPT dan Claude AI digunakan sebagai alat bantu memahami instruksi, menangani kesalahan teknis, mendampingi pelaksanaan eksperimen, serta membantu penyusunan laporan. Hasil evaluasi diperoleh dari eksekusi eksperimen menggunakan JupyterLab.
